@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Socket.io</title>
+        <link rel="stylesheet"  href="style.css">
+        <script src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js' type='text/javascript'></script>
+    </head>
+ 
+    <body>
+        <h1>ПЕРЕЧЕНЬ ИНСТРУМЕНТОВ</br>(после обработки текста)</h1>
+        <div id = "ent"></div>
+    
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            var socket = io.connect('http://localhost:5000');
+            socket.emit('message1', "ierjj");
+            socket.on('file2', function(message) {
+                //alert('The server: ' + message);
+                for(var i = 0; i < message.length-1; i++){
+                    $("#ent").append(" <div id = "+i+"> <em>"+ message[i][0]+"</em>");
+
+                    for(var j = 1; j < message[i].length; j++){
+                        $("#"+i).append(message[i][j]);
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>

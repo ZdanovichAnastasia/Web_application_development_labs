@@ -1,0 +1,105 @@
+table, td, th{
+    border: 1px solid #ffffff;
+    border-collapse: collapse;
+    text-align: center;
+    width: 700px;
+    background-color:  rgb(63, 52, 43);
+    color: rgb(255, 255, 255);
+}
+html, body{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    width: 1450px;
+}
+html {
+    /*background-image: url("https://wallbox.ru/resize/2560x1440/wallpapers/main2/201725/1498307643594e5c3baa5f68.33820439.jpg");*/
+    background-image: url("https://i1.wallbox.ru/wallpapers/main/201131/coffee-karandashi-lineyki-73fd1f3.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+h1{
+    background-color: #8f8172;
+    opacity: 0.8;
+    width: 1400px;
+    height: 140px;
+    color: rgb(63, 52, 43);
+    text-align: center;
+    font-family: cursive;
+    font-size: 50px;
+    margin: 50px 0px 30px 40px;
+    padding-top: 40px;
+}
+.table{
+    width: 1000px;
+    margin-left: 200px;
+    font-size: 24px;
+}
+.article{
+    background-color: #8f8172;
+    opacity: 0.8;
+    width: 1400px;
+    font-size: 28px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin: 30px 0px 0px 40px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+#add-id, #add-num, #add-name, #add-price, #pricedel{
+    width: 450px;
+    height: 30px;
+    margin: 4px;
+    background-color:  rgb(63, 52, 43);
+    color: white;
+}
+#sel{
+    height: 30px;
+    width: 250px;
+    margin-right: 80px;
+    background-color:  rgb(63, 52, 43);
+    color: white;
+}
+#pricedel{
+    width: 340px;
+    height: 30px;
+    margin: 0 -40px 0 30px;
+    background-color:  rgb(63, 52, 43);
+    color: white;
+}
+#del, #edit{
+    width: 110px;
+    height: 40px;
+    margin: 10px 10px 0 10px;
+    background-color:  rgb(63, 52, 43);
+    color: white;
+}
+#edit{
+    margin-right: 100px;
+    background-color:  rgb(63, 52, 43);
+    color: white;
+}
+
+#write, #delpr, #show{
+    width: 460px;
+    height: 40px;
+    margin: 20px;
+    background-color:  rgb(63, 52, 43);
+    color: white;
+}
+#delpr{
+    width: 350px;
+    height: 40px;
+    margin: 20px -30px 20px 0px;
+    background-color:  rgb(63, 52, 43);
+    color: white;
+}

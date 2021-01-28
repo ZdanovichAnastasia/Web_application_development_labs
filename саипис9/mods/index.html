@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Socket.io</title>
+        <link rel="stylesheet"  href="style.css">
+        <script src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js' type='text/javascript'></script>
+    </head>
+ 
+    <body>
+        <h1>ЗАКАЗЫ</h1>
+
+        <div class = "article">
+            <div><input type="text" id="add-id" placeholder="ID заказа"></div>
+            <div><input type="text" id="add-name" placeholder="Название"></div>
+            <div><input type="text" id="add-num" placeholder="Количество"></div>
+            <div><input  type="text" id="add-price" placeholder="Цена"></div>
+            <input type="button" value="Добавить заказ" id="write" >
+
+            <div><select name = "choose" id="sel"></select><input  type="text" id="pricedel" placeholder="Цена для удаления"></div>
+            <input type="button" value="Удалить" id="del" >
+            <input type="button" value="Редактировать" id="edit" />
+            <input type="button" value="Удалить заказы, у которых цена превышает заданную" id="delpr" ></p>
+
+
+        <input type="button" value="Вывести" id="show" /></p>
+        <div id = "ent">
+            <div id = "tab" class = "table"></div>
+        </div>
+        </div>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            var socket = io.connect('http://localhost:8000');
+           //socket.on('message', function(message) {
+                //alert('The server has a message for you: ' + message);
+            //})
+            $('#show').click(function () 
+            {   
+                socket.emit('message', "nhfuhi");
+            });
+            $('#delpr').click(function () 
+            {   
+                var price = document.getElementById("pricedel").value;
+                socket.emit('delpr', price);
+                socket.emit('message', "nhfuhi");
+            });
+            socket.on('show', function(message) {
+                //document.querySelector('.table').innerHTML='';
+                $(".table").empty();
+                $("#sel").empty();
+                var tr = document.createElement("TR");
+                tr.setAttribute("id", "mytr");
+                document.getElementById("tab").appendChild(tr);
+
+                var td = document.createElement("TD");
+                var t = document.createTextNode("ID заказа");
+                td.appendChild(t);
+                document.getElementById("mytr").appendChild(td);
+
+                var td = document.createElement("TD");
+                var t = document.createTextNode("Название");
+                td.appendChild(t);
+                document.getElementById("mytr").appendChild(td);
+
+                var td = document.createElement("TD");
+                var t = document.createTextNode("Количество");
+                td.appendChild(t);
+                document.getElementById("mytr").appendChild(td);
+
+                var td = document.createElement("TD");
+                var t = document.createTextNode("Цена");
+                td.appendChild(t);
+                document.getElementById("mytr").appendChild(td);
+
+                var list = document.getElementById('sel');
+                item = document.createElement('option');
+                for(var i = 0; i < message.length; i++){
+                    var tr = document.createElement("TR");
+                    tr.setAttribute("id", i);
+                    document.getElementById("tab").appendChild(tr);
+
+                    var td = document.createElement("TD");
+                    var t = document.createTextNode(message[i].id);
+                    td.appendChild(t);
+                    document.getElementById(i).appendChild(td);
+
+                    var td = document.createElement("TD");
+                    var t = document.createTextNode(message[i].name);
+                    td.appendChild(t);
+                    document.getElementById(i).appendChild(td);
+
+                    var td = document.createElement("TD");
+                    var t = document.createTextNode(message[i].num);
+                    td.appendChild(t);
+                    document.getElementById(i).appendChild(td);
+
+                    var td = document.createElement("TD");
+                    var t = document.createTextNode(message[i].price);
+                    td.appendChild(t);
+                    document.getElementById(i).appendChild(td);
+
+                    item.innerHTML = message[i].id;
+                    list.appendChild(item.cloneNode(true));
+                }
+                
+            });
+            $('#write').click(function () 
+            {       
+                var id = document.getElementById("add-id").value;
+                var name = document.getElementById("add-name").value;
+                var num = document.getElementById("add-num").value;
+                var price = document.getElementById("add-price").value;
+
+                var inputs = document.querySelectorAll('input[type=text]');
+                for (var i = 0; i < inputs.length; i++) {
+                    inputs[i].value = '';
+                };
+
+                var arr = id + "," + name + "," + num + "," + price;
+                socket.emit('write', arr);
+                socket.emit('message', "nhfuhi");
+
+            });
+
+            $('#edit').click(function () 
+            {       
+                var id = document.getElementById("add-id").value;
+                var name = document.getElementById("add-name").value;
+                var num = document.getElementById("add-num").value;
+                var price = document.getElementById("add-price").value;
+                var sel = document.getElementById("sel").value;
+                var inputs = document.querySelectorAll('input[type=text]');
+                for (var i = 0; i < inputs.length; i++) {
+                    inputs[i].value = '';
+                };
+
+                var arr = id + "," + name + "," + num + "," + price + "," + sel;
+                socket.emit('edit', arr);
+                socket.emit('message', "nhfuhi");
+            });
+            $('#del').click(function () 
+            {       
+                var sel = document.getElementById("sel").value;
+                socket.emit('del', sel);
+                socket.emit('message', "nhfuhi");
+            });
+            
+        </script>
+    </body>
+</html>
