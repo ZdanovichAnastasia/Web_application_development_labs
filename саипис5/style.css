@@ -1,0 +1,150 @@
+html, body{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    width: 1450px;
+}
+html {
+    /*background-image: url("https://wallbox.ru/resize/2560x1440/wallpapers/main2/201725/1498307643594e5c3baa5f68.33820439.jpg");*/
+    background-image: url("https://img3.akspic.ru/image/29697-svet-liniya-uzor-atmosfera-krug-2048x1152.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+#mainh{
+    text-align: center;
+    color: white;
+    font-style: italic;
+    font-family: cursive;
+    font-size: 32px;
+}
+div.lists{
+    background-color: #494949;
+    opacity: 0.8;
+    width: 500px;
+    height: 600px;
+    color: #ccc;
+}
+div.lists #for1, #for2{
+    text-decoration: underline;
+}
+div.add-block{
+    background-color: #494949;
+    opacity: 0.8;
+    width: 920px;
+    height: 480px;
+    text-align: center;
+    padding: 100px 20px 20px 20px;
+    margin: -600px 0 0 520px;
+    position: absolute;
+}
+
+div.table-block1{
+    opacity: 0;
+}
+div.app{
+    width: 1455px;
+    margin: 10px;
+}
+div.caption-table{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 150px;
+    color: #ccc;
+    background: linear-gradient(#2c1c77, #9467ff);
+    font-weight: bold;
+}
+
+div.table{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 150px;
+    color: #ccc;
+}
+
+div.table > div{
+    padding: 10px;
+    line-height: 53px;
+}
+
+div.caption-table > div{
+    padding: 10px;
+}
+
+div.clear-btn-block > button,
+div.table > div > button,
+div.app-block > div > input{
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px;
+    width: 100%;
+    color: #ccc;
+    border: 0;
+    outline: none;
+    background-color: #a70303;
+    border-bottom: 1px solid #ccc;
+    transition: all .5s;
+}
+div.table-block{
+    background-color: #473d57;
+    opacity: 0.8;
+}
+
+div.add-block > div > input[type="text"]:focus{
+    border-bottom: 1px solid #3a3aff;
+    transition: all .5s;
+}
+
+div.clear-btn-block > button:hover,
+div.table > div > button:hover,
+div.app-block > div > input[type="button"]:hover{
+    background-color: #000;
+    border-bottom: 1px solid #3a3aff;
+    transition: all .5s;
+}
+
+div.clear-btn-block > button:active,
+div.table > div > button:active,
+div.app-block > div > input[type="button"]:active{
+    background-color: #000;
+    border-bottom: 1px solid #0000ff;
+    transition: all .5s;
+}
+
+div.table-block{
+    height: 670px;
+    overflow-y: auto;
+    overflow-x: none;
+}
+
+#add-form, #add-num, #add-fio, #add-address, #add-phone-number{
+    width: 450px;
+    height: 20px;
+    margin: 4px;
+}
+#sel{
+    width: 150px;
+    height: 30px;
+    margin: 30px 4px 4px 4px;
+}
+
+#show, #sort{
+    width: 321px;
+    height: 30px;
+    margin: 4px;
+}
+#clear, #fold, #add{
+    width: 210px;
+    height: 30px;
+    margin: 30px 4px 4px 4px;
+}
+#del{
+
+    width: 321px;
+    height: 30px;
+    margin: 4px;
+}

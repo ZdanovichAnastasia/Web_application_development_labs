@@ -1,0 +1,136 @@
+html, body{
+  padding: 0;
+  margin: 0;
+}
+.flex{
+  display: flex;
+  flex-wrap: wrap;
+}
+header{
+  background-color: #686868;
+  opacity: 0.8;
+   flex-basis: 100%;
+   height: 150px;
+   margin:10px 10px 20px 10px;
+   text-align: center;
+}
+nav{ 
+  background-color: #686868;
+  opacity: 0.8;
+  flex-basis: 12%;
+  font-size: 22px;
+  margin:1%;
+}
+aside{ 
+  background-color: #686868;
+  opacity: 0.8;
+  flex-basis: 17%;
+  margin:1%;
+}
+footer{
+  background-color:  #686868;
+  opacity: 0.8;
+  flex-basis: 100%;
+  height: 100px;
+  text-align: center;
+  font-family:cursive;
+  margin:10px;
+  vertical-align: middle;
+}
+footer p{
+  padding: 20px;
+  color: rgb(255, 255, 255);
+  opacity: 1px;
+}
+h1{
+  padding: 20px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-family:cursive;
+  opacity: 1px;
+}
+
+article{
+  position: relative;
+  flex-basis: 65%;
+  margin:1%;
+}
+
+html {
+  /*background-image: url("https://wallbox.ru/resize/2560x1440/wallpapers/main2/201725/1498307643594e5c3baa5f68.33820439.jpg");*/
+  background-image: url("https://w-dog.ru/wallpapers/12/8/478270377158299/abstraktnye-temnyj-gradient-fon.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.forBel, .forUK, .forUSA, .forRus{
+  background-color: #686868;
+  opacity: 0.8;
+  width: 900px;
+  color: rgb(255, 255, 255);
+  padding: 30px;
+  margin-bottom: 20px;
+}
+
+#Beld, #UKd, #USAd, #Rusd{
+  background-color: #686868;
+  opacity: 0.8;
+  width: 230px;
+  height: 300px;
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  margin-bottom: 20px;
+  vertical-align: middle;
+}
+
+#Beld{
+  height: 427px;
+}
+#UKd{
+  height: 335px;
+}
+#USAd{
+  height: 262px;
+}
+#Rusd{
+  height: 353px;
+}
+#image{
+  height: 485px;
+  background-color: #686868;
+  opacity: 0.8;
+}
+#ukimg, #rusimg{
+  position: absolute;
+  margin-left: 490px;
+  margin-top: -223px;
+}
+img{
+  height: 200px;
+  width: 450px;
+  margin: 20px;
+}
+
+#bel-button, #uk-button, #usa-button, #rus-button{
+  width: 215px;
+  height: 40px;
+  margin: 10px;
+}
+#dop-button{
+  width: 930px;
+  height: 40px;
+  margin: 10px;
+}
+.info{
+  background-color: #686868;
+  opacity: 0.8;
+}
+.nav1{
+  position: sticky;
+  top: 0;
+  opacity: 1px;
+}
