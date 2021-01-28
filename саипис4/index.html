@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <h1>Книга рецептов</h1>
+    <div class="form1" id="f1">
+        <form>
+            <label>Введите название <input type="text"  name="txt" id="txt1" ></label>
+            <br>  
+    
+            <label>К какой кухне относится блюдо? <input type="text" name="txt" id="txt2" ></label>
+            <br>  
+   
+            <label>Введите ингредиент <input type="text" class="amount" name="txt" id="txt3"  ></label>
+            <br> 
+            <div id="input0"></div>
+        </form>
+    </div>
+    <div class="form2">  
+        <div>
+            <label>Выберите размер шрифта:</label>
+            <select id="size" name="size" required>
+            <option> </option>
+            <option value="14px">14</option>
+            <option value="16px">16</option>
+            <option value="18px">18</option>
+            <option value="20px">20</option>
+            <option value="22px">22</option>
+            <option value="24px">24</option>
+            <option value="28px">28</option>
+            <option value="30px">30</option>
+            </select>
+        </div><br>
+        <div>
+            <label>Выберите цвет текста:</label>
+            <select id="color" name="color" required>
+            <option> </option>
+            <option value="black">black</option>
+            <option value="red">red</option>
+            <option value="blue">blue</option>
+            <option value="green">green</option>
+            <option value="yellow">yellow</option>
+            <option value="orange">orange</option>
+            </select>
+        </div><br>
+        <div id="zatemnenie">
+           <div id="okno">
+               <h1>Ваш рецепт</h1><br>
+               <p id="demo"></p>
+               <input type="button" id= "but0" onClick="location.hash =''" value="Закрыть">
+            </div>
+        </div>
+        <input type="button" id= "but" onClick="my();" value="Очистить">
+        <input type="button" id= "but" onClick="mysave()" value="Вызвать">
+        <input type="button" id= "but" onClick="addInput()" value="Добавить ингредиент">
+    </div>
+</body>
+
+<script>
+    elements=[
+        document.getElementById("txt1"),
+        document.getElementById("txt2"),
+        document.getElementById("txt3"),
+        document.getElementById("size"),
+        document.getElementById("color")
+    ];
+    var flag = 0;
+    function onKeyDown(e) {
+        if (e.keyCode==13) {// если нажат enter
+            var index=e.target.getAttribute("MyTabIndex");
+            elements[index==elements.length?0:index].focus()
+            flag++;
+        }
+    }
+    elements.forEach(function (e, c){// e - элемент массива, c - id-шник по массиву
+        e.setAttribute("MyTabIndex", c+1);
+        e.onkeydown=onKeyDown
+    });
+</script>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript">
+        function mysave(){
+            //localStorage.clear();
+            var flag = myFunction();
+            var a = document.getElementById("name").value;
+            var b = document.getElementById("dat").value;
+            var c;
+            var fl=document.getElementsByName("scales");
+            for(var i=0; i<fl.length; i++)
+            {
+            if(fl[i].checked){
+                 c="ДА";
+            }
+            else c="НЕТ";
+            }
+            var d = document.getElementById("hero").value;
+            var e = document.getElementById("volume").value;
+            var f = document.getElementById("head").value;
+            var g;
+            var q= document.getElementsByName("m");
+            for(var i=0; i<q.length; i++)
+            {
+            if(q[i].checked){
+                 g=q[i].value;
+            }
+            }
+            var obj = {
+                prop1: a,
+                prop2: b,
+                prop3: c,
+                prop4: d,
+                prop5: e,
+                prop6: f,
+                prop7: g
+            }
+            var num=localStorage.length;
+            if(flag==1){
+                localStorage.setItem(num+1, JSON.stringify(obj));
+                window.location="try.html";
+            }
+        }
+            function myFunction() {
+                var inpObj = document.getElementById("name");
+                //var flag=0;
+                if (!inpObj.checkValidity()) {
+                    document.getElementById("demo").innerHTML = inpObj.validationMessage; 
+                    return 0;
+                }
+                else {document.getElementById("demo").innerHTML = "";}
+                var inpObj = document.getElementById("dat");
+                if (!inpObj.checkValidity()) {
+                    document.getElementById("demo").innerHTML = inpObj.validationMessage; 
+                    return 0;
+                }
+                else {document.getElementById("demo").innerHTML = "";
+                }
+                var inpObj = document.getElementById("hero");
+                if (!inpObj.checkValidity()) {
+                    document.getElementById("demo").innerHTML = inpObj.validationMessage; 
+                    return 0;
+                }
+                else {document.getElementById("demo").innerHTML = "";
+                }
+                var inpObj = document.getElementById("head");
+                if (!inpObj.checkValidity()) {
+                    document.getElementById("demo").innerHTML = inpObj.validationMessage; 
+                    return 0;
+                }
+                else {document.getElementById("demo").innerHTML = "";
+                }
+                return 1;
+            }
+            function cleaner(){
+                window.location="index.html";
+            }
+        
+    </script>
+</head>
+
+<body>
+    <div class="flex">
+    <header>
+         <div class="four"><h1>ВЫСТАВКА СМАРТФОНОВ</h1></div>
+    </header>
+    <nav>
+        <div class="content">
+        <a href="index.html">Главная</a> <br>
+        <a href="try.html">Результаты</a>
+        </div>
+    </nav>
+    <article>
+        <img src="https://itcrumbs.ru/wp-content/uploads/2020/06/sm1.jpg">
+        <div class="opr">
+                <fieldset class="fiel1">
+                    <legend>Контактная информация</legend>
+                    <div>
+                        <label>Введите ФИО<em>*</em> <input type="text" id="name"  required pattern="[A-Za-zА-Яа-яЁё]*?\s[A-Za-zА-Яа-яЁё]*?\s[A-Za-zА-Яа-яЁё]*"></label>
+                    </div>  <br>  
+                    <div>
+                        <label>Ваш пол: </label>   
+                        <input type="radio" id="m" name="m" value="мужчина" checked>
+                        <label for="m">мужчина</label>
+                        <input type="radio" id="wm" name="m" value="женщина">
+                        <label for="wm">женщина</label>
+                    </div>
+                </fieldset>    
+                <fieldset class="fiel2">
+                    <legend>Предпочтения</legend>
+                    <div>
+                        <label for="week">На какой неделе вы посещали выставку<em>*</em> <input type="week" id="dat" name="week" required></label>
+                    </div><br>
+                    <div>
+                        Выберите бренд, который вам понравился больше?<em>*</em>
+                        <select id="hero" name="hero" required>
+                        <option> </option>
+                        <option value="SAMSUNG">SAMSUNG</option>
+                        <option value="XIAOMI">XIAOMI</option>
+                        <option value="HUAWEI">HUAWEI</option>
+                        <option value="APPLE">APPLE</option>
+                        </select>
+                    </div><br>
+                    <div>
+                        <label for="head">Какой цвет смартфона понравился больше? </label>
+                        <input type="color" id="head" name="head">
+                    </div><br>
+                    <div>
+                        <label for="volume">Как вы оцените выставку? </label>
+                        <input type="range" id="volume" name="volume" min="0" max="10">
+                    </div><br>
+                    <div>
+                        Посоветуете ли вы посетить выставку своим знакомым? <input type="checkbox" id="scales" name="scales">
+                        <label for="scales">ДА</label>
+                    </div>
+                </fieldset>
+                <fieldset class="fiel3">
+                    <input type="button" id= "but" onClick="mysave()" value="OK">
+                    <input type="button" id= "but" onClick="cleaner()" value="DEL">
+                    <p id="demo"></p>
+                </fieldset>
+        </div>
+        
+    </article>
+    <aside>
+    </aside>
+    <footer>
+        <p>г. Минск, ул. Интернациональная, 23</p>
+    </footer>
+</div>
+</body>

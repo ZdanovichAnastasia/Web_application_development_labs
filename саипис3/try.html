@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+    <script type="text/javascript">
+    function tab(){
+        var a, b, c, d, f, e, g;
+        var obj=[{prop1: a, prop2: b, prop3: c, prop4: d, prop5: e, prop6: f, prop7: g}];
+
+        var table = document.createElement("TABLE");
+        table.setAttribute("id", "tab");
+        document.body.appendChild(table); 
+        var tr = document.createElement("TR");
+        tr.setAttribute("id", "mytr");
+        document.getElementById("tab").appendChild(tr);
+
+        var td = document.createElement("TH");
+        var t = document.createTextNode("Имя");
+        td.appendChild(t);
+        document.getElementById("mytr").appendChild(td);
+        var td = document.createElement("TH");
+        var t = document.createTextNode("Пол");
+        td.appendChild(t);
+        document.getElementById("mytr").appendChild(td);
+        var td = document.createElement("TH");
+        var t = document.createTextNode("Неделя");
+        td.appendChild(t);
+        document.getElementById("mytr").appendChild(td);
+        var td = document.createElement("TH");
+        var t = document.createTextNode("Бренд");
+        td.appendChild(t);
+        document.getElementById("mytr").appendChild(td);
+        var td = document.createElement("TH");
+        var t = document.createTextNode("Цвет");
+        td.appendChild(t);
+        document.getElementById("mytr").appendChild(td);
+        var td = document.createElement("TH");
+        var t = document.createTextNode("Оценка");
+        td.appendChild(t);
+        document.getElementById("mytr").appendChild(td);
+        var td = document.createElement("TH");
+        var t = document.createTextNode("Лояльность");
+        td.appendChild(t);
+        document.getElementById("mytr").appendChild(td);
+        
+        
+        for(var i=1; i<=localStorage.length; i++){
+            if(localStorage.getItem(i)){
+                obj[i]=JSON.parse(localStorage.getItem(i));
+                var tr = document.createElement("TR");
+                tr.setAttribute("id", i);
+                document.getElementById("tab").appendChild(tr);
+
+                var td = document.createElement("TD");
+                var t = document.createTextNode(obj[i].prop1);
+                td.appendChild(t);
+                document.getElementById(i).appendChild(td);
+                var td = document.createElement("TD");
+                var t = document.createTextNode(obj[i].prop7);
+                td.appendChild(t);
+                document.getElementById(i).appendChild(td);
+                var td = document.createElement("TD");
+                var t = document.createTextNode(obj[i].prop2);
+                td.appendChild(t);
+                document.getElementById(i).appendChild(td);
+                var td = document.createElement("TD");
+                var t = document.createTextNode(obj[i].prop4);
+                td.appendChild(t);
+                document.getElementById(i).appendChild(td);
+                var td = document.createElement("TD");
+                td.style.backgroundColor=obj[i].prop6;
+                var t = document.createTextNode(obj[i].prop6);
+                td.appendChild(t);
+                document.getElementById(i).appendChild(td);
+                var td = document.createElement("TD");
+                var t = document.createTextNode(obj[i].prop5);
+                td.appendChild(t);
+                document.getElementById(i).appendChild(td);
+                var td = document.createElement("TD");
+                //if(obj[i].prop3=="on"){
+                var t = document.createTextNode(obj[i].prop3);
+                //else var t = document.createTextNode(obj[i].prop3);
+                td.appendChild(t);
+                document.getElementById(i).appendChild(td);
+            }
+        }
+        
+    }
+    function list1(){
+        var num=0;
+        var a, b, c, d, f, e, g;
+        var obj=[{prop1: a, prop2: b, prop3: c, prop4: d, prop5: e, prop6: f, prop7: g}];
+        for(var i=1; i<=localStorage.length; i++){
+            if(localStorage.getItem(i)){
+                obj[i]=JSON.parse(localStorage.getItem(i));
+                if(obj[i].prop7=="мужчина"){
+                    num++;
+                    document.write(num+") "+obj[i].prop1+"<br \/>");
+                }
+            }
+        }
+    }
+    function list2(){
+        var num=0;
+        var a, b, c, d, f, e, g;
+        var obj=[{prop1: a, prop2: b, prop3: c, prop4: d, prop5: e, prop6: f, prop7: g}];
+        for(var i=1; i<=localStorage.length; i++){
+            if(localStorage.getItem(i)){
+                obj[i]=JSON.parse(localStorage.getItem(i));
+                if(obj[i].prop7=="женщина"){
+                    num++;
+                    document.write(num+") "+obj[i].prop1);
+                }
+            }
+        }
+    }
+    function del(){
+        localStorage.clear();
+        window.location="try.html";
+    }
+    function back(){
+        window.location="index.html";
+    }
+    </script>
+</head>
+<body>
+    <div class="flex">
+        <header>
+            <div class="four"><h1>ВЫСТАВКА СМАРТФОНОВ</h1></div>
+        </header>
+        <nav>
+            <div class="content">
+            <a href="index.html">Главная</a> <br>
+            <a href="try.html">Результаты</a>
+            </div>
+        </nav>
+        <article>
+            <img src="https://i.ytimg.com/vi/PJt5adeYqKk/maxresdefault.jpg">
+            <p class="p2">Имена зарегестрировавшихся</p>
+            <ol class="list">
+                <b><li>Мужчины</li></b>
+                <ol>
+                    <script>list1();</script>
+                </ol>
+               <b><li>Женщины</li></b>
+                <ol>
+                    <script>list2();</script>
+                </ol>
+            </ol>
+
+            <script>tab();</script>
+            <p>Результаты опроса</p>
+            <fieldset class="but2">
+                <input type="button" onClick="del()" value="DELETE">
+                <input type="button" onClick="back()" value="BACK">
+            </fieldset>
+            
+        </article>
+        <aside>
+        </aside>
+        <footer>
+            <p>г. Минск, ул. Интернациональная, 23</p>
+        </footer>
+
+</body>
+</html>

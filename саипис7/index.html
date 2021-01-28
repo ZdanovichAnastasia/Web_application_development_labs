@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="style.css">
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js' type='text/javascript'></script>
+    <script src="script.js"></script>
+    <title>Document</title>
+</head>
+<body>
+  <div class="flex">
+  <header> <h1> 4 СТРАНЫ </h1></header>
+  <nav>
+    <section class="nav1">
+    <div><a href="#Bel">Беларусь</a></div> 
+    <div><a href="#UK">Великобритания</a></div> 
+    <div><a href="#USA">США</a></div>
+    <div><a href="#Rus">Россия</a></div> 
+    </section>
+  </nav>
+  <article>
+    <div class = "forBel" style = "display: none;">
+      <div id = "Bel"></div>
+    </div>
+  
+    <div class = "forUK" style = "display: none;">
+      <div id = "UK"></div>
+    </div>
+    <div class = "forUSA" style = "display: none;">
+      <div id = "USA"></div>
+    </div>
+    <div class = "forRus" style = "display: none;">
+      <div id = "Rus"></div>
+    </div>
+    <div class = "info"></div>
+    <button onclick="onBel()" id="bel-button">Belarus</button>
+    <button onclick="onUK()" id="uk-button">UK</button>
+    <button onclick="onUSA()" id="usa-button">USA</button>
+    <button onclick="onRus()" id="rus-button">Russia</button>
+    <div><button onclick="onDop()" id="dop-button">Доп параметрами</button></div>
+  </article>
+  <aside>
+   <div style = "display: none;" id = "Beld"></div>
+   <div style = "display: none;" id = "UKd"></div>
+   <div style = "display: none;" id = "USAd"></div>
+   <div style = "display: none;" id = "Rusd"></div>
+
+  </aside>
+  <footer>
+    <p>Zdanovich Anastasia, 872302</p>
+  </footer>
+</div>
+</body>
+</html>

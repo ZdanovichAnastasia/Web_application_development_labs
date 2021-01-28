@@ -1,0 +1,50 @@
+html, body{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    width: 1450px;
+}
+html {
+    /*background-image: url("https://wallbox.ru/resize/2560x1440/wallpapers/main2/201725/1498307643594e5c3baa5f68.33820439.jpg");*/
+    background-image: url("https://img2.goodfon.ru/original/2560x1600/4/1a/tekstura-metall-carapiny.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+#main-area{
+    background-color: #494949;
+    opacity: 0.8;
+    width: 1400px;
+    height: 700px;
+    color: #ccc;
+    margin: 50px 0px 0px 40px;
+}
+#main-list1{
+    opacity: 1;
+    position: absolute;
+    margin-left: 100px;
+    font-size: 18px;
+}
+#main-list2{
+    opacity: 1;
+    position: absolute;
+    margin-left: 800px;
+    font-size: 18px;
+}
+#button-section{
+    opacity: 1;
+    position: absolute;
+    margin: 500px 0 0 100px;
+    font-size: 18px;
+}
+#first-button, #second-button{
+    width: 321px;
+    height: 30px;
+    margin: 150px;
+}
